@@ -1,0 +1,12 @@
+* // ---------- Cookie Attributes ---------- //*
+Secure:
+Only through HTTP
+
+HttpOnly:
+Prevents JavaScript use
+
+Domain:
+Specific URL or path
+
+Expiry:
+When the cookie expires
