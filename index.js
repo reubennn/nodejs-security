@@ -4,7 +4,6 @@ import bodyParser from 'body-parser';
 import helmet from "helmet";
 import RateLimit from "express-rate-limit";
 import routes from './src/routes/crmRoutes';
-import routes from './src/routes/crmRoutes';
 import jsonwebtoken from "jsonwebtoken";
 
 const app = express();
