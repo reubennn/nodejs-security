@@ -1,10 +1,15 @@
 import mongoose from 'mongoose';
+// import validator from "validator";
 import { ContactSchema } from '../models/crmModel';
 
 const Contact = mongoose.model('Contact', ContactSchema);
 
 export const addNewContact = (req, res) => {
     let newContact = new Contact(req.body);
+
+    // Write if statement => if (validator.isEmail(newContact.email)), then..
+    // Run the code below
+    // Otherwise, console.log("Not an email.")
 
     newContact.save((err, contact) => {
         if (err) {
