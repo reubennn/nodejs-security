@@ -15,9 +15,7 @@ module.exports = {
         },
     },
     extends: [
-        "eslint:recommended",
-        'plugin:prettier/recommended',
-        'prettier'
+        "eslint:recommended"
     ],
     rules: {
         indent: ["error", 4, { SwitchCase: 1 }],

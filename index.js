@@ -1,9 +1,9 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import bodyParser from 'body-parser';
+import express from "express";
+import mongoose from "mongoose";
+import bodyParser from "body-parser";
 import helmet from "helmet";
 import RateLimit from "express-rate-limit";
-import routes from './src/routes/crmRoutes';
+import routes from "./src/routes/crmRoutes";
 import jsonwebtoken from "jsonwebtoken";
 
 const app = express();
@@ -19,9 +19,12 @@ const limiter = new RateLimit({
     delayMs: 0 // Disables delays
 });
 
+//  Apply Express Rate Limiter to all requests
+app.use(limiter);
+
 // mongoose connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/nodeSecurity', {
+mongoose.connect("mongodb://localhost/nodeSecurity", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -49,9 +52,9 @@ app.use((req, res, next) => {
 routes(app);
 
 // serving static files
-app.use(express.static('public'));
+app.use(express.static("public"));
 
-app.get('/', (req, res) =>
+app.get("/", (req, res) =>
     res.send(`Node and express server is running on port ${PORT}`)
 );
 

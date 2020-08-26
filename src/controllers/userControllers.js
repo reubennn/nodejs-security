@@ -44,8 +44,8 @@ export const login = (req, res) => {
                 res.status(401).json({ message: "Authentication failed. Password is incorrect." });
             } else { // The user is authenticated
                 // Send as a response the signed token
-                return res.json({ token: jwt.sign({ email: user.email, username: user.username, _id: user.id }, "RESTFULAPIs") }) // Secret word to sign the web token
+                return res.json({ token: jwt.sign({ email: user.email, username: user.username, _id: user.id }, "RESTFULAPIs") });// Secret word to sign the web token
             }
         }
-    })
-}
+    });
+};
